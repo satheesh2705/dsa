@@ -1,3 +1,5 @@
+package binary;
+
 import java.util.Arrays;
 
 public class ceiling {

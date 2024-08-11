@@ -1,3 +1,4 @@
+package binary;
 
 
 public class infinityArray {
