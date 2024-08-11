@@ -1,26 +1,27 @@
 /**
  * muntainArray
  */
-public class muntainArray {
+public class rotatArray {
 
     public static void main(String[] args) {
         
-        int arr [] = {1,2,4,5,6,4,3,2};
-        int target = 3;
+       int arr [] = {6,7,8,9,10,1,2,3,4,5};
+       int target = 6;
        int ans =  search(arr,target);
        peakIndexMountainArray(arr);
         System.out.println("the ans is:"+ans);
     }
 
     static int search(int [] arr, int target){
+        
         int peack = peakIndexMountainArray(arr);
-        System.out.println("peack:"+peack);
         int firstTry = binarySearch(arr, target,peack);
+        System.out.println("firsttry"+firstTry);
         if (firstTry != -1) {
             return firstTry;
         }
 
-        return orderAgnosticSearching(arr, target,peack);
+        return afterPivotBS(arr, target,peack);
 
     }
 
@@ -28,6 +29,7 @@ public class muntainArray {
         
         int start = 0;
         int end = arr.length-1;
+
 
         while (start<end){
 
@@ -44,6 +46,8 @@ public class muntainArray {
 
         return start;    
     }
+
+
     static int binarySearch(int arr[],  int target,int peack){
 
         int start = 0;
@@ -53,7 +57,6 @@ public class muntainArray {
         while( start <= end ){
 
             int mid = (start + end)/2;
-        System.out.println("mid:"+mid+"start:"+start);
 
             if ( arr[mid] == target ) {
                 return mid;
@@ -69,30 +72,35 @@ public class muntainArray {
         return -1;
     }
 
-    static int orderAgnosticSearching(int [] arr,int target,int peack){
+
+    static int afterPivotBS(int arr[],  int target,int peack){
 
         int start = peack+1;
-        int end = arr.length;
+                System.out.println("st"+start);
 
-        while (start <= end) {
-            
-            int mid = (end+start) / 2;
+        int end = arr.length;
+                System.out.println(end);
+        
+
+        while( start <= end ){
+
+            int mid = (start + end)/2;
 
             if ( arr[mid] == target ) {
                 return mid;
             }
-               else if ( arr[mid] > target ){
-
-                start = mid + 1;
-
-            }
+               else if ( arr[mid] < target ){
+                    start = mid + 1;
+               }
                else{
                 end = mid - 1;
             }
-        }
 
-    return -1;
-}
+        }
+        return -10;
+    }
+
+
 }
 
 

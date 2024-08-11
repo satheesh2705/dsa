@@ -15,13 +15,16 @@ public class infinityArray {
 
         while (target > arr[end]){
 
+
+            System.out.println("start"+start);
+            System.out.println("end:"+end);
+
             int temp = end + 1 ;
+            start = temp;
             end = end * 2 ;
             // end = end + (end-start+1) * 2 ;
-            System.out.println("end:"+end);
-            System.out.println("start"+start);
             
-            start = temp;
+           
 
         }
 

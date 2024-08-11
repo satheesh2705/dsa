@@ -3,12 +3,13 @@ public class Main {
 
     public static void main(String args[]){
         int arr[]  = {0,1,2,3,10,20,30,40,50};
-        int target = 30;
+        int target = 3;
         int last   = arr.length-1;
 
        int ans =  binarySearch(arr,target);
        
         System.out.println(ans);
+        System.out.println("helo");
     }
      static int binarySearch(int arr[],  int target){
 

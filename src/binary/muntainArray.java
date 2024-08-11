@@ -1,26 +1,39 @@
 /**
  * muntainArray
  */
-public class rotatArray {
+public class muntainArray {
 
     public static void main(String[] args) {
         
-        int arr [] = {6,7,8,9,10,1,2,3,4,5};
-        int target = 0;
+        int arr [] = {1,2,4,5,6,4,3,2};
+        int target = 1; 
        int ans =  search(arr,target);
-       peakIndexMountainArray(arr);
-        System.out.println("the ans is:"+ans);
+        System.out.println("the ans is:     "+ans);
+
+        int one ;
+        
     }
 
+
     static int search(int [] arr, int target){
+        // first i will find the mountain value in the array
+        // then the value is strored in peak variable and then 
         int peack = peakIndexMountainArray(arr);
+        System.out.println("peack:"+peack);
+        //next the start=0 and end = peack then the values are give the binarysearch i will store binarysearch method in firsttry if firsttry value is -1 iruntha target does not here thats mean target value doesn't have first half so  we go to the next half
+        // may be answer(target) here we got a answer and its return to main method
+
+
         int firstTry = binarySearch(arr, target,peack);
-        System.out.println("firsttry"+firstTry);
+        int count = 0;
         if (firstTry != -1) {
+        	count++;
+            System.out.println("first try are "+count);
             return firstTry;
         }
 
-        return afterPivotBS(arr, target,peack);
+        // target doesn't exist in first half we goto the second of like above peak number 
+        return orderAgnosticSearching(arr, target,peack);
 
     }
 
@@ -28,7 +41,6 @@ public class rotatArray {
         
         int start = 0;
         int end = arr.length-1;
-
 
         while (start<end){
 
@@ -45,8 +57,6 @@ public class rotatArray {
 
         return start;    
     }
-
-
     static int binarySearch(int arr[],  int target,int peack){
 
         int start = 0;
@@ -56,6 +66,7 @@ public class rotatArray {
         while( start <= end ){
 
             int mid = (start + end)/2;
+        
 
             if ( arr[mid] == target ) {
                 return mid;
@@ -71,35 +82,30 @@ public class rotatArray {
         return -1;
     }
 
-
-    static int afterPivotBS(int arr[],  int target,int peack){
+    static int orderAgnosticSearching(int [] arr,int target,int peack){
 
         int start = peack+1;
-                System.out.println("st"+start);
-
         int end = arr.length;
-                System.out.println(end);
-        
 
-        while( start <= end ){
-
-            int mid = (start + end)/2;
+        while (start <= end) {
+            
+            int mid = (end+start) / 2;
 
             if ( arr[mid] == target ) {
                 return mid;
             }
-               else if ( arr[mid] < target ){
-                    start = mid + 1;
-               }
+               else if ( arr[mid] > target ){
+
+                start = mid + 1;
+
+            }
                else{
                 end = mid - 1;
             }
-
         }
-        return -10;
-    }
 
-
+    return -1;
+}
 }
 
 
