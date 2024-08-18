@@ -1,5 +1,4 @@
-import java.util.Scanner;
-
+package binary;
 public class example {
     public static void main(String[] args) {
         

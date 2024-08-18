@@ -1,9 +1,11 @@
+package binary;
+
 public class floor {
     public static void main(String args[]){
         int arr[]  = {0,1,2,3,10,20,30,40,50,55};
         //            0,1,2,3,4,,5,,6,7,,8,,9
         int target = 40;
-        int last   = arr.length-1;
+        // int last   = arr.length-1;
 
        int ans =  findingFloorNumber(arr,target);
        

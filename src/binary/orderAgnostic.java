@@ -1,3 +1,5 @@
+package binary;
+
 public class orderAgnostic {
     public static void main(String[] args) {
         

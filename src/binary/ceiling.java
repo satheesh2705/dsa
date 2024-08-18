@@ -1,7 +1,5 @@
 package binary;
 
-import java.util.Arrays;
-
 public class ceiling {
     
     public static void main(String args[]){

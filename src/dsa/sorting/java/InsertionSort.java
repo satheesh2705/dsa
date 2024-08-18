@@ -5,6 +5,8 @@ import java.util.Arrays;
 public class InsertionSort {
 	public static void main(String[] args) {
 		int arr [] = {8,9,7,6,5};
+		System.out.println(arr.length);
+		
 		insertionSort(arr);
 		System.out.println(Arrays.toString(arr));
 	}

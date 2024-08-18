@@ -1,6 +1,7 @@
 /**
  * muntainArray
- */
+ */package binary;
+
 public class rotatArray {
 
     public static void main(String[] args) {

@@ -1,10 +1,11 @@
+package binary;
 public class repeatedNumber {
     
 
     public static void main(String args[]){
         int arr[]  = {0,3,3,3,30,40,50};
         int target = 3;
-        int last   = arr.length-1;
+        // int last   = arr.length-1;
 
         repeatedNumber obj = new repeatedNumber();
         int[] ans = obj.searchrange(arr, target);

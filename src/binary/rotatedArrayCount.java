@@ -1,3 +1,5 @@
+package binary;
+
 public class rotatedArrayCount {
    
     public static void main(String[] args) {

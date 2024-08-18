@@ -1,6 +1,7 @@
 /**
  * muntainArray
- */
+ */package binary;
+
 public class muntainArray {
 
     public static void main(String[] args) {
@@ -10,7 +11,6 @@ public class muntainArray {
        int ans =  search(arr,target);
         System.out.println("the ans is:     "+ans);
 
-        int one ;
         
     }
 

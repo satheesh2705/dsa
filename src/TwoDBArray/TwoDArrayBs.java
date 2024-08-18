@@ -1,4 +1,4 @@
-package TwoDArray;
+package TwoDBArray;
 
 import java.util.Arrays;
 

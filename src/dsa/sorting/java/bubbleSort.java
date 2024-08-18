@@ -24,6 +24,7 @@ public class bubbleSort {
 		  	  				
 		  	  			}
 		  	  		}
+
 		  			if(!swap) {
 		  				System.out.println("Array is sorted...");
 		  				break;
